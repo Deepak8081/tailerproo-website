@@ -9,7 +9,7 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
           <div className="sm:col-span-2 md:col-span-1">
             <div className="flex items-center gap-2.5">
-              <Image src="/app-icon.png" alt="" width={28} height={28} className="rounded-md" />
+              <Image src="/app-icon.png" alt="" width={28} height={28} className="rounded-md object-contain" />
               <span className="font-display text-[16px] text-cream">
                 Tailor<span className="text-gold">Pro</span>
               </span>
@@ -25,9 +25,18 @@ export function Footer() {
             </div>
             <div className="mt-4 flex flex-col gap-2.5 text-[13.5px] text-cream-dim">
               <a href="/#features" className="transition-colors hover:text-gold-light">Features</a>
+              <a href="/#screenshots" className="transition-colors hover:text-gold-light">App Screens</a>
               <a href="/#workflow" className="transition-colors hover:text-gold-light">Workflow</a>
               <a href="/#why" className="transition-colors hover:text-gold-light">Why TailorPro</a>
               <a href="/#faq" className="transition-colors hover:text-gold-light">FAQ</a>
+              <a
+                href={site.playStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-gold transition-colors hover:text-gold-light"
+              >
+                Download App (Play Store)
+              </a>
             </div>
           </div>
 

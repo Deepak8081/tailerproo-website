@@ -9,6 +9,7 @@ import { site } from "@/lib/site";
 
 const navLinks = [
   { href: "/#features", label: "Features" },
+  { href: "/#screenshots", label: "App Screens" },
   { href: "/#workflow", label: "Workflow" },
   { href: "/#why", label: "Why TailorPro" },
   { href: "/#faq", label: "FAQ" }
@@ -42,7 +43,7 @@ export function Navbar() {
     >
       <nav className="mx-auto flex max-w-[1120px] items-center justify-between px-6 py-4 md:px-7">
         <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <Image src="/app-icon.png" alt="" width={32} height={32} className="rounded-md" />
+          <Image src="/app-icon.png" alt="" width={32} height={32} className="rounded-md object-contain" />
           <span className="font-display text-[19px] tracking-wide text-cream">
             Tailor<span className="text-gold">Pro</span>
           </span>
@@ -58,6 +59,8 @@ export function Navbar() {
 
         <a
           href={site.playStoreUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden rounded-sm bg-gradient-to-b from-gold-light to-gold px-5 py-2.5 text-[13px] font-bold tracking-wide text-[#1a1406] shadow-[0_8px_24px_-8px_rgba(201,162,39,0.5)] transition-[filter] hover:brightness-105 md:inline-flex"
         >
           Get the App
@@ -94,6 +97,8 @@ export function Navbar() {
               ))}
               <a
                 href={site.playStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="mt-3 inline-flex items-center justify-center rounded-sm bg-gradient-to-b from-gold-light to-gold px-5 py-3 text-[13px] font-bold tracking-wide text-[#1a1406]"
               >

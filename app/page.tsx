@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
+import { AppScreenshots } from "@/components/AppScreenshots";
 import { Workflow } from "@/components/Workflow";
 import { WhyUs } from "@/components/WhyUs";
 import { Testimonials } from "@/components/Testimonials";
@@ -15,6 +16,7 @@ export default function Home() {
       <main>
         <Hero />
         <Features />
+        <AppScreenshots />
         <Workflow />
         <WhyUs />
         <Testimonials />

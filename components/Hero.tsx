@@ -5,7 +5,6 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import { site } from "@/lib/site";
-import { PhoneMockup } from "./PhoneMockup";
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -39,14 +38,7 @@ export function Hero() {
       />
 
       <div className="relative mx-auto max-w-[1120px]">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto mb-6 w-[104px] drop-shadow-[0_12px_30px_rgba(201,162,39,0.25)] sm:w-[126px]"
-        >
-          <Image src="/app-icon.png" alt="TailorPro app icon" width={126} height={126} className="rounded-2xl" priority />
-        </motion.div>
+       
 
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -88,6 +80,8 @@ export function Hero() {
         >
           <a
             href={site.playStoreUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 rounded-sm bg-gradient-to-b from-gold-light to-gold px-6 py-3.5 text-[13.5px] font-bold tracking-wide text-[#1a1406] shadow-[0_8px_24px_-8px_rgba(201,162,39,0.5)] transition-transform hover:brightness-105 active:scale-[0.98]"
           >
             Download on Play Store
@@ -110,8 +104,6 @@ export function Hero() {
         >
           Free to get started · No spreadsheets, no register books
         </motion.div>
-
-        <PhoneMockup />
       </div>
     </section>
   );

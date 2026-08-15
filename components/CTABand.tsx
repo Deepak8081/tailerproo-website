@@ -25,6 +25,8 @@ export function CTABand() {
           <div className="mt-8 flex justify-center">
             <a
               href={site.playStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 rounded-sm bg-gradient-to-b from-gold-light to-gold px-7 py-4 text-[13.5px] font-bold tracking-wide text-[#1a1406] shadow-[0_8px_24px_-8px_rgba(201,162,39,0.5)] transition-transform hover:brightness-105 active:scale-[0.98]"
             >
               Download on Play Store
