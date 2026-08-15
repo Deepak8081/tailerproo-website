@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #c9a227;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: #07130f;
+  color: #f3ede0;
+}
+
+::selection {
+  background: rgba(201, 162, 39, 0.35);
+  color: #f3ede0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #07130f;
+}
+::-webkit-scrollbar-thumb {
+  background: #24402f;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a227;
+}
+
+/* Stitched dashed divider — signature motif */
+.stitch-line {
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(201, 162, 39, 0.6) 0,
+    rgba(201, 162, 39, 0.6) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  height: 1px;
+}
+
+/* Gold text gradient */
+.text-gold-gradient {
+  background: linear-gradient(180deg, #e8cf7a, #c9a227);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Focus visibility for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #c9a227;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.font-display {
+  letter-spacing: 0.01em;
+}
