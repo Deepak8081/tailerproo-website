@@ -5,9 +5,9 @@ export const site = {
     "TailorPro is the shop-management app built for tailors — customers, measurements, orders and deliveries stitched into one calm, elegant screen. Free to start, no spreadsheets, no register books.",
   url: "https://www.tailorpro.app",
   playStoreUrl: "https://play.google.com/store/apps/details?id=com.app.tailorproo&pcampaignid=web_share",
-  email: "hello@tailorpro.app",
-  phone: "+91 98765 43210",
-  address: "TailorPro Studio, Connaught Place, New Delhi, India",
+  email: "tailorproo4@gmail.com",
+  phone: "+91 95522 66922",
+  address: "Vijay Nagar, Indore, Madhya Pradesh, India",
   social: {
     instagram: "https://instagram.com/tailorpro.app",
     twitter: "https://twitter.com/tailorproapp",

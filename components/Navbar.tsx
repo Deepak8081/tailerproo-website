@@ -1,10 +1,10 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight, Sparkles } from "lucide-react";
 import { site } from "@/lib/site";
 
 const navLinks = [
@@ -35,46 +35,69 @@ export function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
+      className={`sticky top-0 z-50 border-b transition-all duration-300 ${
         scrolled
-          ? "bg-ink/90 backdrop-blur-md border-hairline"
-          : "bg-transparent border-transparent"
+          ? "bg-ink/95 backdrop-blur-lg border-gold/20 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.8)]"
+          : "bg-ink/70 backdrop-blur-md border-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-[1120px] items-center justify-between px-6 py-4 md:px-7">
-        <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <Image src="/app-icon.png" alt="" width={32} height={32} className="rounded-md object-contain" />
-          <span className="font-display text-[19px] tracking-wide text-cream">
-            Tailor<span className="text-gold">Pro</span>
-          </span>
+      <nav className="mx-auto flex max-w-[1160px] items-center justify-between px-6 py-3.5 md:px-8">
+        {/* Brand Logo with High Visibility Gold Sheen */}
+        <Link
+          href="/"
+          className="group flex items-center transition-transform hover:scale-[1.02]"
+          onClick={() => setOpen(false)}
+        >
+          <div className="relative">
+            <Image
+              src="/logo-gold.png"
+              alt="TailorPro"
+              width={165}
+              height={45}
+              className="h-10 sm:h-11 w-auto object-contain drop-shadow-[0_2px_14px_rgba(201,162,39,0.4)] transition-all group-hover:brightness-110"
+              priority
+            />
+          </div>
         </Link>
 
-        <div className="hidden items-center gap-8 text-[13.5px] text-cream-dim md:flex">
+        {/* Center Desktop Navigation */}
+        <div className="hidden items-center gap-7 text-[13.5px] font-medium tracking-wide text-cream/80 md:flex">
           {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className="transition-colors hover:text-gold-light">
+            <a
+              key={l.href}
+              href={l.href}
+              className="relative py-1 transition-colors hover:text-gold-light after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-0 after:bg-gold after:transition-all hover:after:w-full"
+            >
               {l.label}
             </a>
           ))}
         </div>
 
-        <a
-          href={site.playStoreUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden rounded-sm bg-gradient-to-b from-gold-light to-gold px-5 py-2.5 text-[13px] font-bold tracking-wide text-[#1a1406] shadow-[0_8px_24px_-8px_rgba(201,162,39,0.5)] transition-[filter] hover:brightness-105 md:inline-flex"
-        >
-          Get the App
-        </a>
+        {/* Desktop Action CTA */}
+        <div className="hidden items-center gap-4 md:flex">
+          <a
+            href={site.playStoreUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-flex items-center gap-2 overflow-hidden bg-gradient-to-r from-[#d9ae29] via-[#f0da8c] to-[#c9a227] px-5 py-2.5 text-[13px] font-bold tracking-wider text-[#1a1406] shadow-[0_4px_20px_-3px_rgba(201,162,39,0.5)] transition-all hover:scale-[1.02] hover:shadow-[0_6px_25px_-2px_rgba(201,162,39,0.65)] active:scale-[0.98]"
+          >
+            <Sparkles size={14} className="text-[#1a1406]" />
+            <span>Get Free App</span>
+            <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" />
+          </a>
+        </div>
 
+        {/* Mobile Menu Button */}
         <button
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((v) => !v)}
-          className="text-cream md:hidden"
+          className="flex h-10 w-10 items-center justify-center border border-gold/30 bg-panel text-cream transition-colors hover:border-gold md:hidden"
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={22} className="text-gold" /> : <Menu size={22} className="text-gold" />}
         </button>
       </nav>
 
+      {/* Mobile Drawer */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -82,17 +105,18 @@ export function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-t border-hairline bg-ink md:hidden"
+            className="overflow-hidden border-t border-gold/20 bg-ink/98 backdrop-blur-xl md:hidden"
           >
-            <div className="flex flex-col gap-1 px-6 py-5">
+            <div className="flex flex-col gap-2 px-6 py-6">
               {navLinks.map((l) => (
                 <a
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="py-3 text-[15px] text-cream-dim transition-colors hover:text-gold-light"
+                  className="flex items-center justify-between border-b border-hairline/50 py-3.5 text-[15px] font-medium text-cream/90 transition-colors hover:text-gold-light"
                 >
-                  {l.label}
+                  <span>{l.label}</span>
+                  <ArrowRight size={14} className="text-gold/60" />
                 </a>
               ))}
               <a
@@ -100,9 +124,10 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="mt-3 inline-flex items-center justify-center rounded-sm bg-gradient-to-b from-gold-light to-gold px-5 py-3 text-[13px] font-bold tracking-wide text-[#1a1406]"
+                className="mt-4 flex items-center justify-center gap-2 bg-gradient-to-r from-[#d9ae29] via-[#f0da8c] to-[#c9a227] px-5 py-3.5 text-[13.5px] font-bold tracking-wide text-[#1a1406] shadow-lg"
               >
-                Get the App
+                <Sparkles size={16} />
+                <span>Download on Play Store (Free)</span>
               </a>
             </div>
           </motion.div>
