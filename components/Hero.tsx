@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import { useRef } from "react";
@@ -30,12 +30,12 @@ export function Hero() {
         } as React.CSSProperties
       }
     >
-      {/* Luxury Ambient Lighting */}
+      {/* Luxury Ambient Lighting & Emerald Silk Glow */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-90 transition-opacity duration-700"
+        className="pointer-events-none absolute inset-0 opacity-95 transition-opacity duration-700"
         style={{
           background:
-            "radial-gradient(750px circle at var(--mx) var(--my), rgba(201,162,39,0.18), transparent 70%), radial-gradient(circle at 50% 0%, rgba(36,64,47,0.5), transparent 75%)"
+            "radial-gradient(850px circle at var(--mx) var(--my), rgba(201,162,39,0.22), transparent 70%), radial-gradient(circle at 50% -10%, rgba(36,90,60,0.55), transparent 75%), radial-gradient(circle at 20% 60%, rgba(20,55,38,0.45), transparent 60%)"
         }}
       />
 
@@ -68,13 +68,10 @@ export function Hero() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mx-auto mb-6 inline-flex items-center gap-2.5 border border-gold/40 bg-gradient-to-r from-gold/15 via-gold/25 to-gold/15 px-4 py-1.5 text-[12px] font-semibold tracking-wider text-gold-light shadow-[0_4px_20px_rgba(201,162,39,0.15)]"
+          className="mx-auto mb-6 inline-flex items-center gap-2.5 rounded-full border border-gold/45 bg-gradient-to-r from-gold/15 via-gold/25 to-gold/15 px-5 py-2 text-[12px] font-semibold tracking-wider text-gold-light shadow-[0_4px_25px_rgba(201,162,39,0.2)]"
         >
-          <span className="flex h-2 w-2 relative">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-gold"></span>
-          </span>
-          <span className="uppercase tracking-[0.18em]">The #1 Shop Management App for Tailors</span>
+          <Sparkles size={14} className="text-gold" />
+          <span className="uppercase tracking-[0.2em]">TAILOR PROO — Bespoke Elegance, Digitally Tailored</span>
         </motion.div>
 
         {/* High-End Main Headline */}
@@ -82,12 +79,13 @@ export function Hero() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto max-w-[920px] font-display text-[38px] leading-[1.08] text-cream sm:text-[54px] md:text-[68px]"
+          className="mx-auto max-w-[940px] font-display text-[38px] leading-[1.08] text-cream sm:text-[54px] md:text-[68px]"
         >
-          Run your tailor shop{" "}
+          Run your tailor shop with{" "}
           <span className="bg-gradient-to-r from-[#e8cf7a] via-[#f7e7a9] to-[#c9a227] bg-clip-text text-transparent font-accent italic">
-            like a bespoke atelier.
-          </span>
+            bespoke elegance,
+          </span>{" "}
+          digitally tailored.
         </motion.h1>
 
         {/* Subtitle / Description */}
@@ -97,7 +95,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mx-auto mt-6 max-w-[680px] text-[16px] leading-relaxed text-cream/85 sm:text-[18px]"
         >
-          Say goodbye to torn measurement slips and scattered notebooks. Stitched specifically for tailors, boutiques & karigars — customer records, instant WhatsApp receipts, and live order tracking in one elegant app.
+          Say goodbye to torn measurement slips and scattered notebooks. Stitched specifically for tailors, boutiques &amp; karigars — customer records, instant WhatsApp receipts, and live order tracking in one elegant app.
         </motion.p>
 
         {/* Quick Highlights Bar */}

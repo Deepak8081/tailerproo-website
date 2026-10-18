@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
@@ -46,62 +46,62 @@ export function PhoneMockup() {
       ref={stageRef}
       className="relative mt-12 flex justify-center [perspective:1200px] md:mt-16"
     >
-      {/* Floating Tailor Badge 1: Measurements (Left) */}
+      {/* Floating Tailor Badge 1: Real Order (Left) */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.8, duration: 0.8 }}
-        className="pointer-events-none absolute -left-2 top-12 z-30 hidden sm:flex items-center gap-3 border border-gold/40 bg-panel/95 p-3.5 shadow-[0_15px_35px_rgba(0,0,0,0.5)] backdrop-blur-md md:-left-12 lg:-left-20"
-      >
-        <div className="flex h-9 w-9 shrink-0 items-center justify-center bg-gold/15 text-gold-light">
-          <Scissors size={18} />
-        </div>
-        <div className="text-left">
-          <div className="text-[10.5px] font-bold uppercase tracking-wider text-gold">
-            Measurements Saved
-          </div>
-          <div className="text-[12.5px] font-medium text-cream">
-            Chest 38&quot; · Waist 32&quot; · Length 42&quot;
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Floating Tailor Badge 2: Stitching Status (Right) */}
-      <motion.div
-        initial={{ opacity: 0, x: 30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 1, duration: 0.8 }}
-        className="pointer-events-none absolute -right-2 top-32 z-30 hidden sm:flex items-center gap-3 border border-gold/40 bg-panel/95 p-3.5 shadow-[0_15px_35px_rgba(0,0,0,0.5)] backdrop-blur-md md:-right-12 lg:-right-20"
+        className="pointer-events-none absolute -left-2 top-10 z-30 hidden sm:flex items-center gap-3 border border-gold/40 bg-panel/95 p-3.5 shadow-[0_15px_35px_rgba(0,0,0,0.6)] backdrop-blur-md md:-left-12 lg:-left-20"
       >
         <div className="flex h-9 w-9 shrink-0 items-center justify-center bg-gold/15 text-gold-light">
           <Clock size={18} />
         </div>
         <div className="text-left">
           <div className="text-[10.5px] font-bold uppercase tracking-wider text-gold">
-            In Stitching Unit
+            Order #ORD-20260813-67A888
           </div>
           <div className="text-[12.5px] font-medium text-cream">
-            2 Sherwani · Delivery Tomorrow
+            kalander · Pant x1 · ₹500 In Progress
           </div>
         </div>
       </motion.div>
 
-      {/* Floating Tailor Badge 3: WhatsApp Receipt (Left Bottom) */}
+      {/* Floating Tailor Badge 2: Authentic Measurements (Right) */}
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1, duration: 0.8 }}
+        className="pointer-events-none absolute -right-2 top-32 z-30 hidden sm:flex items-center gap-3 border border-gold/40 bg-panel/95 p-3.5 shadow-[0_15px_35px_rgba(0,0,0,0.6)] backdrop-blur-md md:-right-12 lg:-right-20"
+      >
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center bg-gold/15 text-gold-light">
+          <Scissors size={18} />
+        </div>
+        <div className="text-left">
+          <div className="text-[10.5px] font-bold uppercase tracking-wider text-gold">
+            Measurement Sheet Generated
+          </div>
+          <div className="text-[12.5px] font-medium text-cream">
+            Latak 45.5&quot; · Ghutna 56.8&quot; · Kamar 44&quot;
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Floating Tailor Badge 3: WhatsApp PDF Slip (Left Bottom) */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.8 }}
-        className="pointer-events-none absolute -left-2 bottom-12 z-30 hidden lg:flex items-center gap-3 border border-gold/40 bg-panel/95 p-3.5 shadow-[0_15px_35px_rgba(0,0,0,0.5)] backdrop-blur-md lg:-left-16"
+        className="pointer-events-none absolute -left-2 bottom-12 z-30 hidden lg:flex items-center gap-3 border border-gold/40 bg-panel/95 p-3.5 shadow-[0_15px_35px_rgba(0,0,0,0.6)] backdrop-blur-md lg:-left-16"
       >
         <div className="flex h-9 w-9 shrink-0 items-center justify-center bg-emerald-500/15 text-emerald-400">
           <MessageCircle size={18} />
         </div>
         <div className="text-left">
           <div className="text-[10.5px] font-bold uppercase tracking-wider text-emerald-400">
-            WhatsApp Slip Sent
+            WhatsApp PDF Slip
           </div>
           <div className="text-[12.5px] font-medium text-cream">
-            Invoice & Live Status Link
+            1-Tap Share to Karigar &amp; Customer
           </div>
         </div>
       </motion.div>
@@ -109,21 +109,23 @@ export function PhoneMockup() {
       {/* Main 3D Phone Shell */}
       <div
         ref={phoneRef}
-        className="relative w-[280px] animate-float border-[3px] border-[#2e2617] bg-[#0c0a06] p-2.5 shadow-[0_30px_70px_-15px_rgba(201,162,39,0.28),0_20px_40px_-20px_rgba(0,0,0,0.8)] [transform-style:preserve-3d] sm:w-[310px]"
+        className="relative w-[300px] animate-float rounded-[38px] border-[3.5px] border-[#3a2f1b] bg-[#0c0a06] p-2.5 shadow-[0_30px_70px_-15px_rgba(201,162,39,0.38),0_20px_45px_-15px_rgba(0,0,0,0.95)] ring-1 ring-gold/30 [transform-style:preserve-3d] sm:w-[330px] md:w-[350px]"
       >
-        {/* Dynamic Island Notch */}
-        <div className="absolute left-1/2 top-4 z-20 h-3.5 w-24 -translate-x-1/2 bg-black/90 border border-white/10" />
+        {/* Subtle Speaker Bezel Slit (Outside Screen) */}
+        <div className="absolute left-1/2 top-1.5 z-20 h-1 w-14 -translate-x-1/2 rounded-full bg-gold/30" />
 
-        {/* Real App Screenshot inside Phone */}
-        <div className="relative aspect-[9/19.5] overflow-hidden bg-black">
+        {/* Real App Screenshot inside Phone with Exact Aspect Ratio - ZERO CROP, ZERO OVERFLOW */}
+        <div className="relative aspect-[1200/1880] w-full overflow-hidden rounded-[26px] bg-[#07130f]">
           <Image
-            src="/app-screenshots/screen-1.png"
-            alt="TailorPro real app screen"
+            src="/app-screenshots/hero-dashboard.png"
+            alt="TailorPro Live Atelier Dashboard - Orders, Deliveries & Karigar Workflow"
             fill
-            className="object-cover object-top"
+            className="object-contain"
             priority
-            sizes="(max-width: 640px) 280px, 310px"
+            sizes="(max-width: 640px) 300px, 350px"
           />
+          {/* Subtle satin glare overlay */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.04] to-transparent opacity-50" />
         </div>
       </div>
     </div>
