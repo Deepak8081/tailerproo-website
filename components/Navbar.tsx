@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -66,7 +66,7 @@ export function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="relative py-1 transition-colors hover:text-gold-light after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-0 after:bg-gold after:transition-all hover:after:w-full"
+              className="relative py-1 transition-all hover:text-gold-light hover:text-glow-subtle after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-0 after:bg-gold after:shadow-[0_0_8px_rgba(201,162,39,0.9)] after:transition-all hover:after:w-full"
             >
               {l.label}
             </a>
@@ -79,7 +79,7 @@ export function Navbar() {
             href={site.playStoreUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-2 overflow-hidden bg-gradient-to-r from-[#d9ae29] via-[#f0da8c] to-[#c9a227] px-5 py-2.5 text-[13px] font-bold tracking-wider text-[#1a1406] shadow-[0_4px_20px_-3px_rgba(201,162,39,0.5)] transition-all hover:scale-[1.02] hover:shadow-[0_6px_25px_-2px_rgba(201,162,39,0.65)] active:scale-[0.98]"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-md bg-gradient-to-r from-[#d9ae29] via-[#f7e7a9] to-[#c9a227] px-5 py-2.5 text-[13px] font-bold tracking-wider text-[#1a1406] shadow-[0_0_20px_rgba(201,162,39,0.45),0_4px_15px_-3px_rgba(201,162,39,0.5)] transition-all hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(201,162,39,0.65),0_6px_25px_-2px_rgba(201,162,39,0.7)] active:scale-[0.98]"
           >
             <Sparkles size={14} className="text-[#1a1406]" />
             <span>Get Free App</span>

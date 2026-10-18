@@ -368,14 +368,14 @@ export function AppScreenshots() {
         {/* Section Header */}
         <Reveal className="mx-auto max-w-[720px] text-center">
           <Stitch label="Official Google Play App Interface" />
-          <h2 className="mt-4 font-display text-[30px] leading-tight text-cream sm:text-[38px] md:text-[46px]">
+          <h2 className="mt-4 font-display text-[30px] leading-tight text-cream text-glow-gold sm:text-[38px] md:text-[46px]">
             Explore All 14{" "}
-            <span className="bg-gradient-to-r from-[#e8cf7a] via-[#f7e7a9] to-[#c9a227] bg-clip-text text-transparent font-accent italic">
+            <span className="font-accent italic text-shimmer drop-shadow-[0_0_25px_rgba(255,217,102,0.85)]">
               Bespoke Atelier
             </span>{" "}
             Screens
           </h2>
-          <p className="mt-3.5 text-[15px] leading-relaxed text-cream-dim sm:text-[16.5px]">
+          <p className="mt-3.5 text-[15px] leading-relaxed text-cream/80 sm:text-[16.5px]">
             Actual high-definition screenshots from TailorPro on Google Play. Designed with traditional Indian tailoring
             terminology, instant WhatsApp measurement slips, and bespoke luxury craft.
           </p>

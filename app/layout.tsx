@@ -119,6 +119,9 @@ export const metadata: Metadata = {
   }
 };
 
+import { ScrollProgress } from "@/components/ScrollProgress";
+import { CustomCursor } from "@/components/CustomCursor";
+
 export default function RootLayout({
   children
 }: {
@@ -252,6 +255,8 @@ export default function RootLayout({
       className={`${playfair.variable} ${inter.variable} ${cormorant.variable}`}
     >
       <body className="font-body antialiased bg-ink text-cream overflow-x-hidden bg-hero-glow bg-fixed">
+        <ScrollProgress />
+        <CustomCursor />
         {children}
         <script
           type="application/ld+json"
